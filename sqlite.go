@@ -2,7 +2,6 @@ package sqlite
 
 import (
 	"database/sql"
-	"strconv"
 	"strings"
 
 	_ "github.com/mutecomm/go-sqlcipher/v4"
