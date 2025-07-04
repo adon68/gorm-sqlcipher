@@ -80,19 +80,19 @@ func (dialector Dialector) ClauseBuilders() map[string]clause.ClauseBuilder {
 			c.Build(builder)
 		},
 		"LIMIT": func(c clause.Clause, builder clause.Builder) {
-			if limit, ok := c.Expression.(clause.Limit); ok {
-				if *limit.Limit > 0 {
-					builder.WriteString("LIMIT ")
-					builder.WriteString(strconv.Itoa(*limit.Limit))
-				}
-				if limit.Offset > 0 {
-					if *limit.Limit > 0 {
-						builder.WriteString(" ")
-					}
-					builder.WriteString("OFFSET ")
-					builder.WriteString(strconv.Itoa(limit.Offset))
-				}
-			}
+			// if limit, ok := c.Expression.(clause.Limit); ok {
+			// 	if *limit.Limit > 0 {
+			// 		builder.WriteString("LIMIT ")
+			// 		builder.WriteString(strconv.Itoa(*limit.Limit))
+			// 	}
+			// 	if limit.Offset > 0 {
+			// 		if *limit.Limit > 0 {
+			// 			builder.WriteString(" ")
+			// 		}
+			// 		builder.WriteString("OFFSET ")
+			// 		builder.WriteString(strconv.Itoa(limit.Offset))
+			// 	}
+			// }
 		},
 		"FOR": func(c clause.Clause, builder clause.Builder) {
 			if _, ok := c.Expression.(clause.Locking); ok {
